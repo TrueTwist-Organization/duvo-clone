@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: duvo-postgres
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: duvo
+      POSTGRES_PASSWORD: duvo
+      POSTGRES_DB: duvo
+    volumes:
+      - duvo_pg_data:/var/lib/postgresql/data
+
+volumes:
+  duvo_pg_data:
