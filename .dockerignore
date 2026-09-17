@@ -1,0 +1,36 @@
+# Dependencies & build output
+node_modules
+.next
+out
+build
+coverage
+*.tsbuildinfo
+
+# Git / IDE / local tooling
+.git
+.github
+.agents
+.claude
+.windsurf
+.vscode
+.idea
+.DS_Store
+*.pem
+
+# Env & secrets — never bake into the image
+.env
+.env.*
+!.env.example
+
+# Docs / drafts not needed at runtime
+DEPLOYMENT.md
+README.md
+deploy*.yml
+docker-compose*.yml
+*.md
+
+# Tests / misc
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+**/__tests__

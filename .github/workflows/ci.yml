@@ -4,13 +4,18 @@ on:
   push:
     branches:
       - main
+      - develop
   pull_request:
     branches:
       - main
+      - develop
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      # Placeholder so prisma.config.ts / generate succeed without a live DB
+      DATABASE_URL: postgresql://duvo:duvo@localhost:5432/duvo?schema=public
 
     steps:
       - name: Checkout code
