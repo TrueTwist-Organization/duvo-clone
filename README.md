@@ -40,3 +40,10 @@ Deployed via Hostinger's Node.js hosting panel, connected directly to this GitHu
 (auto-deploy on push to `main`). Set environment variables in the Hostinger dashboard's
 Environment Variables tab (see `.env.example` for the list). No Docker, SSH keys, or GitHub
 Actions deploy pipeline needed.
+
+## Roadmap
+
+CRM/lead data currently lives in an in-memory store and resets on every restart or deploy — fine
+for a demo, not for production. Planned next step: a real backend with Neon or Supabase
+(Postgres) for persistence, Clerk for auth (replacing the hand-rolled CRM login), and Resend as
+the sole email provider. Not started yet — see `CLAUDE.md` for details.
